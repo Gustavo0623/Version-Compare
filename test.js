@@ -35,7 +35,7 @@ function VersionCompare( version1, version2 ) {
     }
 
     // to even out value length issues ex: ([2, 1, 1], [2, 011, 1] => [2, 100, 1], [2, 011, 1])
-    for (let i = 0; i < v1Array.length; i++) {
+    for (let i = 1; i < v1Array.length - 1; i++) {
         // convert index value to array
         const indexArr1 = v1Array[i].split('')
         const indexArr2 = v2Array[i].split('')
@@ -83,7 +83,7 @@ function VersionCompare( version1, version2 ) {
     
 }
 // expected return = 1
-console.log(VersionCompare('2.1.1', '2.001000.1.0'))
+console.log(VersionCompare('17', '2.0.1'))
 
 // expected return = -1
 console.log(VersionCompare('2.0001.1', '2.001000.'))
